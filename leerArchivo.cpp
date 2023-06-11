@@ -33,7 +33,7 @@ main(int argc, char const *argv[])
         cout << endl;
     }
 
-    entrada.close();
+    entrada.close(); 
 
     return 0;
 }
