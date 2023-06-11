@@ -2,5 +2,7 @@
 
 class Video
 {
+    private: 
 
+    public: 
 }; 
