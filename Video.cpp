@@ -7,12 +7,9 @@ Implementación de métodos de la clase Video
 #include <iostream>
 using namespace std; 
 
-Video::Video() 
-{
-}
-
 Video::Video(int Id, string nom, string gen, int calif, int dur, string fechaEstreno)
 {
+
 }
 
 int Video::getId()

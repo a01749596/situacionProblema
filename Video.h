@@ -18,7 +18,6 @@ private:
     int dur;
     string fechaEstreno; 
 public: 
-    Video(); 
     Video(int Id, string nom, string gen, int calif, int dur, string fechaEstreno);
     int getId();
     string getNombre();
