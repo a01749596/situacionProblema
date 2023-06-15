@@ -5,39 +5,54 @@ Implementación de métodos de la clase Video
 
 #include "Video.h"
 #include <iostream>
-using namespace std; 
+using namespace std;
 
-Video::Video(int Id, string nom, string gen, int calif, int dur, string fechaEstreno)
+Video::Video()
 {
-
 }
 
-int Video::getId()
+Video::Video(string Id, string nom, string gen, string calif, string dur, string fecha)
 {
-    return 0;
+    this->Id = Id;
+    this->nom = nom;
+    this->gen = gen;
+    this->calif = calif;
+    this->dur = dur;
+    this->fecha = fecha;
 }
 
-string Video::getNombre()
+string Video::getId()
 {
-    return string();
+    return Id;
 }
 
-string Video::getGenero()
+string Video::getNom()
 {
-    return string();
+    return nom;
 }
 
-int Video::getCalificacion()
+string Video::getGen()
 {
-    return 0;
+    return gen;
 }
 
-int Video::getDuracion()
+string Video::getCalif()
 {
-    return 0;
+    return calif;
 }
 
-string Video::getFechaEstreno()
+string Video::getDur()
 {
-    return string();
+    return dur;
+}
+
+string Video::getFecha()
+{
+    return fecha;
+}
+
+string Video::cambiaCalif()
+{
+    string califNueva = "ola"; 
+    return califNueva; 
 }

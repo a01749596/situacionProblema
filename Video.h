@@ -10,21 +10,24 @@ using namespace std;
 
 class Video
 {
-private: 
-    int Id; 
+protected: 
+    string Id;
     string nom; 
-    string gen; 
-    int calif; 
-    int dur;
-    string fechaEstreno; 
-public: 
-    Video(int Id, string nom, string gen, int calif, int dur, string fechaEstreno);
-    int getId();
-    string getNombre();
-    string getGenero();
-    int getCalificacion(); 
-    int getDuracion(); 
-    string getFechaEstreno(); 
+    string gen;
+    string calif;
+    string dur;
+    string fecha;
+public:
+    Video();
+    Video(string Id, string nom, string gen, string calif, string dur, string fecha); 
+    string getId();
+    string getNom();
+    string getGen();
+    string getCalif();
+    string getDur();
+    string getFecha();
+    string cambiaCalif();
+
 }; 
 
 #endif 

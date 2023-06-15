@@ -2,6 +2,7 @@
 lee un archivo en c++
 */
 using namespace std;
+#include "Peliculas.h"
 #include <iostream>
 #include <fstream>
 #include <string>
