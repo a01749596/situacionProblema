@@ -11,9 +11,9 @@ public:
     Peliculas();
     Video getId();
     Video getNom(); 
+    Video getDur();
     Video getGen();
     Video getCalif();
-    Video getDur();
     Video getFecha();
     string cambiaCalif();
     void getLista (); 

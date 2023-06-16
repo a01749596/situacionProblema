@@ -14,4 +14,5 @@ public:
     Video getTem();
     Video getNumE(); 
     string cambiaCalif(); 
+    void getListaEp (); 
 }; 

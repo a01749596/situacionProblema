@@ -11,7 +11,7 @@ Video::Video()
 {
 }
 
-Video::Video(string Id, string nom, string gen, string calif, string dur, string fecha)
+Video::Video(string Id, string nom, string dur, string gen, string calif, string fecha)
 {
     this->Id = Id;
     this->nom = nom;
@@ -19,6 +19,20 @@ Video::Video(string Id, string nom, string gen, string calif, string dur, string
     this->calif = calif;
     this->dur = dur;
     this->fecha = fecha;
+}
+
+Video::Video(string Id, string nom, string dur, string gen, string calif, string fecha, string IdEp, string nomEp, string tem, string numEp)
+{
+    this->Id = Id;
+    this->nom = nom;
+    this->gen = gen;
+    this->calif = calif;
+    this->dur = dur;
+    this->fecha = fecha;
+    this->IdEp = IdEp;
+    this->nomEp = nomEp;
+    this->tem = tem;
+    this->numEp = numEp;
 }
 
 string Video::getId()
@@ -49,6 +63,26 @@ string Video::getDur()
 string Video::getFecha()
 {
     return fecha;
+}
+
+string Video::getIdEp()
+{
+    return IdEp;
+}
+
+string Video::getNomEp()
+{
+    return nomEp;
+}
+
+string Video::getTem()
+{
+    return tem;
+}
+
+string Video::getNumEp()
+{
+    return numEp;
 }
 
 string Video::cambiaCalif()

@@ -5,6 +5,7 @@ using namespace std;
 #include <sstream>
 #include <string> 
 #include <vector>
+vector<string> separar(string linea);
 
 Peliculas::Peliculas()
 {
@@ -22,8 +23,11 @@ Peliculas::Peliculas()
     while (getline(DatosPelicula, linea))
     {
         stringstream token(linea);
+        vector<string> datos = separar(linea);
+        if (datos.size()==6)
+        {
         getline(token, Id, ',');
-        getline(token, nombre, ',');
+        getline(token, nombre, ','); 
         getline(token, duracion, ',');
         getline(token, genero, ',');
         getline(token, calificacion, ',');
@@ -32,6 +36,7 @@ Peliculas::Peliculas()
         Video video(Id, nombre, duracion, genero, calificacion, fechaestreno);
 
         peli.push_back(video); 
+        }
 
     }
 }
@@ -47,6 +52,11 @@ Video Peliculas::getNom()
     return peli[1];
 }
 
+Video Peliculas::getDur()
+{
+    return peli[2];
+}
+
 Video Peliculas::getGen()
 {
     return peli[3];
@@ -55,11 +65,6 @@ Video Peliculas::getGen()
 Video Peliculas::getCalif()
 {
     return peli[4];
-}
-
-Video Peliculas::getDur()
-{
-    return peli[2];
 }
 
 Video Peliculas::getFecha()
@@ -89,7 +94,25 @@ void Peliculas::getLista()
         cout << endl; 
         cout << "Fecha de estreno: " << peli[i].getFecha() << " ";
         cout << endl; 
+        cout << endl; 
     }
 }
 
+vector<string> separar(string linea)
+{
+    vector<string> tokens; 
+
+    stringstream entrada(linea); 
+    string dato;                 
+    int numeroTokens = 0;
+    while (getline(entrada, dato, ','))
+    {
+        if (dato != "")
+        {
+            tokens.push_back(dato); 
+            numeroTokens++;
+        }
+    }
+    return tokens;
+}
 
