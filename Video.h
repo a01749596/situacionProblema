@@ -29,7 +29,7 @@ public:
     string getGen();
     float getCalif();
     string getFechaEs();
-    virtual void getDatos(); 
+    virtual void getDatos() = 0; 
 }; 
 
 #endif 

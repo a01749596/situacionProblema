@@ -19,5 +19,6 @@ public:
     string getGen();
     void nuevoEp(Episodio* episodio);
     vector<Episodio*> getEp(); 
+    void getDatos(); 
 }; 
 #endif 

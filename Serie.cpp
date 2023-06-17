@@ -1,4 +1,6 @@
 #include "Serie.h"
+#include <iostream>
+using namespace std; 
 
 Serie::Serie(string Id, string nom, string gen)
 {
@@ -32,4 +34,8 @@ vector<Episodio *> Serie::getEp()
     return episodios;
 }
 
+void Serie::getDatos()
+{
+    cout << Id; 
 
+}

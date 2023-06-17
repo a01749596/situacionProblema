@@ -14,7 +14,7 @@ ServicioS::ServicioS()
 {
 }
 
-void ServicioS::abrirArchivo()
+void ServicioS::abrirPeliculas()
 {
     ifstream entrada; 
     entrada.open("DatosPeliculas.csv");
@@ -28,21 +28,73 @@ void ServicioS::abrirArchivo()
         {
             Peliculas *peliculas = new Peliculas(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5]);
             pelicula.push_back(peliculas); 
-        }else{
-            Serie *serie = new Episodio(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5], datos[6], datos[7], datos[8], datos[9]); 
-        }
-        cout << endl; 
     }
     entrada.close(); 
+    }
 }
 
-void ServicioS::videosCalif(float calificacion)
+void ServicioS::abrirSeries()
+{
+    ifstream entrada; 
+    entrada.open("DatosPeliculas.csv");
+    string linea; 
+    int numeroLinea = 1; 
+
+    while(getline(entrada, linea))
+    {
+        vector<string> datos = separar(linea); 
+        if(datos.size() == 10)
+        {
+            /*Episodio *episodio = new Episodio(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5], datos[6], datos[7], stoi(datos[8]), stoi(datos[9]));
+            episodio.push_back(episodio); 
+
+            Serie *series = new Series(datos[0], datos[1], datos[3]);
+            series->nuevoEp(episodio);
+            series.push_back(Serie); */
+    }
+    entrada.close(); 
+    }
+}
+
+void ServicioS::videosPeliCalif(float cal)
 {
     for(int i=0; i < pelicula.size(); i++)
     {
-        if (pelicula[i]->getCalif() >= calificacion)
+        if (pelicula[i]->getCalif() >= cal)
         {
             pelicula[i]->getDatos(); 
+        }
+    }
+}
+
+void ServicioS::videosCalif(float cal)
+{
+    for(int i=0; i < pelicula.size(); i++)
+    {
+        if (pelicula[i]->getCalif() >= cal)
+        {
+            pelicula[i]->getDatos(); 
+        }
+    }
+    for(int i = 0; i < series.size(); i++)
+    {
+        /*for(int j = 0; j < series[i],episodios.size(); j++)
+        {
+            if(series[i].episodios[j].getCalif() >= cal)
+            {
+                series[i].episodios[j].getDatos();
+            }
+        }*/
+    }
+}
+
+void ServicioS::filtroSeries(string nom)
+{
+    for(int i=0; i<series.size(); i++)
+    {
+        if(series[i]->getNom() == nom)
+        {
+            series[i]->getDatos(); 
         }
     }
 }
@@ -56,6 +108,18 @@ void ServicioS::videosGenero(string genero)
             pelicula[i]->getDatos(); 
         }
     }
+}
+
+float ServicioS::promedioVideo(string nom)
+{
+    float totalCal = 0.0;
+    int totalEp = 0;
+
+
+}
+
+void ServicioS::califVideos()
+{
 }
 
 void ServicioS::menu()
@@ -73,11 +137,11 @@ void ServicioS::menu()
     cin >> opcion; 
     if(opcion == 1)
     {
-        ServicioS::abrirArchivo();
+        ServicioS::abrirPeliculas();
         cout << "Se cargo el archivo"; 
     } else if(opcion == 2)
     {
-        ServicioS::abrirArchivo();
+        ServicioS::abrirPeliculas();
         float calificacion;
         cout << "Ingrese la calificacion: "; 
         cin >> calificacion; 

@@ -14,9 +14,14 @@ private:
     vector<Serie*> series; 
 public:
     ServicioS(); 
-    void abrirArchivo();
-    void videosCalif(float calificacion);
-    void videosGenero(string);
+    void abrirPeliculas();
+    void abrirSeries(); 
+    void videosPeliCalif(float cal);
+    void videosCalif(float cal); 
+    void filtroSeries(string nom);
+    void videosGenero(string gen);
+    float promedioVideo(string nom);
+    void califVideos(); 
     void menu(); 
 }; 
 
