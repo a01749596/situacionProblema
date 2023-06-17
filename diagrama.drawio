@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="tIxozkypbWaRvRqusSom" name="Page-1">
-        <mxGraphModel dx="1834" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1975" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -45,13 +45,8 @@
                 <mxCell id="20" value="+ Episodio(Id:string, nom:string, dur:float,&#10;gen:string, calif:float, fechaEs:string, &#10;IdE:string, nomE:string, tem:string, &#10;numE:string) &#10;+ getDatos( ): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="18">
                     <mxGeometry y="130" width="230" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="25">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="425" y="390" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="25" value="ServicioS " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-                    <mxGeometry x="310" y="710" width="230" height="200" as="geometry"/>
+                    <mxGeometry x="90" y="670" width="230" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="- vector&lt;Pelicula&gt; peliculas" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="25">
                     <mxGeometry y="26" width="230" height="44" as="geometry"/>
@@ -61,9 +56,6 @@
                 </mxCell>
                 <mxCell id="27" value="+ ServicioS( )&#10;+ abrirPeliculas( ): void &#10;+ videosCalif(float calificacion): void &#10;+ menu( ): void  " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="25">
                     <mxGeometry y="80" width="230" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="31" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="17" target="25">
-                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

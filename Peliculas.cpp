@@ -12,6 +12,15 @@ Peliculas::Peliculas(vector<string> datos) : Video(datos[0], datos[1], stof(dato
 
 void Peliculas::getDatos()
 {
-    Video::getDatos(); 
+    cout << getId();
+    cout << getNom();
+    cout << getDur();
+    cout << getGen();
+    cout << getCalif();
+    cout << getFechaEs(); 
 }
 
+void Peliculas::setCalif(float calificacion)
+{
+    Video::setCalif(calificacion); 
+}

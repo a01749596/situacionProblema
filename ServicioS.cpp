@@ -1,6 +1,8 @@
 #include "ServicioS.h"
 #include "Video.h"
-#include "Peliculas.h"
+#include "Peliculas.h" 
+#include "Episodio.h"
+#include "Serie.h"
 #include <iostream>
 #include <fstream> 
 #include <string> 
@@ -12,7 +14,7 @@ ServicioS::ServicioS()
 {
 }
 
-void ServicioS::abrirPeliculas()
+void ServicioS::abrirArchivo()
 {
     ifstream entrada; 
     entrada.open("DatosPeliculas.csv");
@@ -26,6 +28,8 @@ void ServicioS::abrirPeliculas()
         {
             Peliculas *peliculas = new Peliculas(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5]);
             pelicula.push_back(peliculas); 
+        }else{
+            Serie *serie = new Episodio(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5], datos[6], datos[7], datos[8], datos[9]); 
         }
         cout << endl; 
     }
@@ -43,6 +47,17 @@ void ServicioS::videosCalif(float calificacion)
     }
 }
 
+void ServicioS::videosGenero(string genero)
+{
+    for(int i=0; i<pelicula.size(); i++)
+    {
+        if(pelicula[i]->getGen() == genero)
+        {
+            pelicula[i]->getDatos(); 
+        }
+    }
+}
+
 void ServicioS::menu()
 {
     int opcion; 
@@ -53,19 +68,26 @@ void ServicioS::menu()
     cout << "Elija una opcion" << endl; 
     cout << "1) Cargar archivo" << endl; 
     cout << "2) Buscar por Calificacion" << endl;
+    cout << "3) Buscar por genero" << endl; 
 
     cin >> opcion; 
     if(opcion == 1)
     {
-        ServicioS::abrirPeliculas();
-        cout << "Se cargo el archivo" << endl; 
+        ServicioS::abrirArchivo();
+        cout << "Se cargo el archivo"; 
     } else if(opcion == 2)
     {
-        ServicioS::abrirPeliculas();
+        ServicioS::abrirArchivo();
         float calificacion;
-        cout << "Ingrese la calificacion: " << endl; 
+        cout << "Ingrese la calificacion: "; 
         cin >> calificacion; 
         ServicioS::videosCalif(calificacion); 
+    } else if(opcion == 3)
+    {
+        string genero;
+        cout << "Genero que desea: "; 
+        cin >> genero;
+        ServicioS::videosGenero(genero); 
     }
 }
 
@@ -80,11 +102,8 @@ vector<string> separar(string linea)
     {
         if (dato != "" && dato != "\n" && dato != "\r")
         {
-            // cout << dato << endl;
             tokens.push_back(dato); // GUARDA en el vector
-            //cout << numeroTokens++ << endl;
         }
     }
-    // cout << "tokens: " << numeroTokens << endl << endl;
     return tokens;
 }

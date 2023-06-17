@@ -22,7 +22,7 @@ protected:
     Video(); 
 public: 
     Video(string, string, float, string, float, string); 
-    void setCalif(float);
+    virtual void setCalif(float calificacion) = 0;
     string getId();
     string getNom(); 
     float getDur();

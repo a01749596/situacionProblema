@@ -19,9 +19,13 @@ Video::Video(string, string, float, string, float, string)
     this->fechaEs = fechaEs;
 }
 
-void Video::setCalif(float numero)
+void Video::setCalif(float calificacion)
 {
-    calif = numero; 
+    int califM = 7; 
+    if (calificacion >=0 && calificacion <= califM)
+    {
+        calif = calificacion;
+    }
 }
 
 string Video::getId()
