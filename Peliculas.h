@@ -6,7 +6,7 @@ using namespace std;
 class Peliculas : public Video
 {
 private: 
-    vector<Video> peli;
+    //vector<Video> peli;
 public:
     Peliculas();
     Video getId();

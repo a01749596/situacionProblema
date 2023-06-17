@@ -9,7 +9,7 @@ vector<string> separar(string linea);
 
 Peliculas::Peliculas()
 {
-    ifstream DatosPelicula;
+    /*ifstream DatosPelicula;
     DatosPelicula.open("./DatosPeliculas.csv");
 
     string linea; 
@@ -38,7 +38,7 @@ Peliculas::Peliculas()
         peli.push_back(video); 
         }
 
-    }
+    }*/
 }
 
 
@@ -78,7 +78,7 @@ string Peliculas::cambiaCalif()
     return califNueva;
 }
 
-void Peliculas::getLista()
+/*void Peliculas::getLista()
 {
     for(int i = 0; i<peli.size(); i++)
     {
@@ -96,7 +96,7 @@ void Peliculas::getLista()
         cout << endl; 
         cout << endl; 
     }
-}
+}*/
 
 vector<string> separar(string linea)
 {

@@ -4,6 +4,7 @@ Definición de la clase video
 */
 
 #include <string>
+#include <vector>
 using namespace std; 
 #ifndef VIDEO_H
 #define VIDEO_H
@@ -21,6 +22,8 @@ protected:
     string nomEp;
     string tem;
     string numEp;
+    vector<Video> peli;
+    vector<Video> ep; 
 public:
     Video();
     Video(string Id, string nom, string dur, string gen, string calif, string fecha); 
@@ -36,6 +39,8 @@ public:
     string getTem();
     string getNumEp();
     string cambiaCalif();
+    void getListaEp (); 
+    void getListaPeli (); 
 
 }; 
 

@@ -1,16 +1,16 @@
 /*
 lee un archivo en c++
 */
-using namespace std;
-#include "Peliculas.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
+using namespace std;
+
 vector<string> separar(string linea);
 
-main(int argc, char const *argv[])
+main()
 {
     ifstream entrada;
     entrada.open("DatosPeliculas.csv");
@@ -20,7 +20,7 @@ main(int argc, char const *argv[])
 
     while (getline(entrada, linea))
     {
-       // cout << (numeroLinea++) << ":" << linea << endl;
+        cout << (numeroLinea++) << ":" << linea << endl;
         vector<string> datos = separar(linea);
         if (datos.size()==6)
         {
@@ -41,20 +41,24 @@ main(int argc, char const *argv[])
 
 vector<string> separar(string linea)
 {
-    vector<string> tokens; // componentes linea
+    vector<string> tokens; // Componentes de la línea
 
     stringstream entrada(linea); // flujo de datos a partir de una cadena
-    string dato;                 // token individual
+
+    string dato; // token individual
+
     int numeroTokens = 0;
-    while (getline(entrada, dato, ','))
+
+    while (getline(entrada, dato, ',')) // dependiendo de cuantos tokens click derecho formatear documento
     {
-        if (dato != "")
+
+        if (dato != "" && dato != "\n" && dato != "\r")
         {
-            //cout << dato << endl;
-            tokens.push_back(dato); //GUARDA en vector
-            numeroTokens++;
+            // cout << dato << endl;
+            tokens.push_back(dato); // GUARDA en el vector
+            //cout << numeroTokens++ << endl;
         }
     }
-    //cout << "Tokens: " << numeroTokens << endl << endl;
+    // cout << "tokens: " << numeroTokens << endl << endl;
     return tokens;
 }

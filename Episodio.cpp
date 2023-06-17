@@ -9,7 +9,7 @@ vector<string> separar(string linea);
 
 Episodio::Episodio() 
 {
-    ifstream DatosPelicula;
+    /*ifstream DatosPelicula;
     DatosPelicula.open("./DatosPeliculas.csv");
 
     string linea; 
@@ -45,7 +45,7 @@ Episodio::Episodio()
         ep.push_back(video); 
         }
 
-    }
+    }*/
 }
 
 Video Episodio::getId()
