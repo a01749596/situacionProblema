@@ -6,9 +6,6 @@ using namespace std;
 int main()
 {
     ServicioS servicio;
-    servicio.leerPeliculas(); 
-
-    servicio.getMenu(); 
-
+    servicio.menu();
     return 0;
 }

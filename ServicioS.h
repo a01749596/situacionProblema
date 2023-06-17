@@ -8,11 +8,12 @@
 class ServicioS
 {
 private: 
-    vector<Peliculas> peli;
+    vector<Peliculas*> pelicula;
 public:
-    void leerPeliculas();
-    void videosCalif();
-    void getMenu(); 
+    ServicioS(); 
+    void abrirPeliculas();
+    void videosCalif(float calificacion);
+    void menu(); 
 }; 
 
 #endif
