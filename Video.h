@@ -11,37 +11,24 @@ using namespace std;
 
 class Video
 {
-protected: 
-    string Id;
+private: 
+    string Id; 
     string nom; 
+    float dur;
     string gen;
-    string calif;
-    string dur;
-    string fecha;
-    string IdEp; 
-    string nomEp;
-    string tem;
-    string numEp;
-    vector<Video> peli;
-    vector<Video> ep; 
-public:
-    Video();
-    Video(string Id, string nom, string dur, string gen, string calif, string fecha); 
-    Video(string Id, string nom, string dur, string gen, string calif, string fecha, string IdEp, string nomEp, string tem, string numEp); 
+    float calif; 
+    string fechaEs;
+protected: 
+    Video(string Id, string nom, float dur, string gen, float calif, string fechaEs); 
+public: 
+    void setCalif(float);
     string getId();
-    string getNom();
+    string getNom(); 
+    float getDur();
     string getGen();
-    string getCalif();
-    string getDur();
-    string getFecha();
-    string getIdEp();
-    string getNomEp();
-    string getTem();
-    string getNumEp();
-    string cambiaCalif();
-    void getListaEp (); 
-    void getListaPeli (); 
-
+    float getCalif();
+    string getFechaEs();
+    virtual void getDatos(); 
 }; 
 
 #endif 

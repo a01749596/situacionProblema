@@ -2,19 +2,14 @@
 #include <vector> 
 #include <string> 
 using namespace std; 
+#ifndef PELICULAS_H
+#define PELICULAS_H
 
 class Peliculas : public Video
 {
-private: 
-    //vector<Video> peli;
-public:
-    Peliculas();
-    Video getId();
-    Video getNom(); 
-    Video getDur();
-    Video getGen();
-    Video getCalif();
-    Video getFecha();
-    string cambiaCalif();
-    void getLista (); 
-};
+public: 
+    Peliculas(string Id, string nom, float dur, string gen, float calif, string fechaEs);
+    void getDatos(); 
+}; 
+
+#endif 
