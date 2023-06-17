@@ -8,7 +8,7 @@ using namespace std;
 class Peliculas : public Video
 {
 public: 
-    Peliculas(string Id, string nom, float dur, string gen, float calif, string fechaEs);
+    Peliculas(string Id, string nom, string dur, string gen, string calif, string fechaEs);
     void getDatos(); 
 }; 
 

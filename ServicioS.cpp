@@ -10,7 +10,9 @@ void ServicioS::leerPeliculas()
     DatosPelicula.open("./DatosPeliculas.csv");
     string linea; 
     vector<string> datos;  
-
+    
+    if (datos.size()==6)
+    {
     while (getline(DatosPelicula, linea))
     {
         stringstream token(linea);
@@ -26,28 +28,21 @@ void ServicioS::leerPeliculas()
         getline(token, genero, ',');
         getline(token, calificacion, ',');
         getline(token, fechaestreno, ',');
+        
 
-        Peliculas peliculas(Id, nombre, std::stof(duracion), genero, std::stof(calificacion), fechaestreno);
+        Peliculas peliculas(Id, nombre, duracion, genero, calificacion, fechaestreno);
 
         peli.push_back(peliculas); 
+    }
     }
     DatosPelicula.close(); 
 }
 
-void ServicioS::videosCalif(float calif)
+void ServicioS::videosCalif()
 {
     for(int i = 0; i < peli.size(); i++)
     {
-        if(peli[i].getCalif() >= calif)
-        {
-            cout << "Id: " << peli[i].getId() << endl;
-            cout << "Nombre: " << peli[i].getNom() << endl;
-            cout << "Duracion: " << peli[i].getDur() << endl;
-            cout << "Genero: " << peli[i].getGen() << endl;
-            cout << "Calificacion: " << peli[i].getCalif() << endl;
-            cout << "Fecha de estreno: " << peli[i].getFechaEs() << endl;
-            cout << endl;
-        }
+        peli[i].getDatos(); 
     }
 }
 
@@ -62,10 +57,7 @@ void ServicioS::getMenu()
 
         if(opcion == 1)
         {
-            float calif;
-            cout << "Ingrese la califiacion: ";
-            cin >> calif; 
-            ServicioS::videosCalif(calif); 
+            ServicioS::videosCalif(); 
         }else{
             cout << "Valor incorrecto" << endl; 
         }

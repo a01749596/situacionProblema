@@ -11,7 +11,7 @@ private:
     vector<Peliculas> peli;
 public:
     void leerPeliculas();
-    void videosCalif(float);
+    void videosCalif();
     void getMenu(); 
 }; 
 
