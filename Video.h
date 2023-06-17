@@ -14,19 +14,20 @@ class Video
 private: 
     string Id; 
     string nom; 
-    string dur;
+    float dur;
     string gen;
-    string calif; 
+    float calif; 
     string fechaEs;
 protected: 
-    Video(string Id, string nom, string dur, string gen, string calif, string fechaEs); 
+    Video(); 
 public: 
+    Video(string, string, float, string, float, string); 
     void setCalif(float);
     string getId();
     string getNom(); 
-    string getDur();
+    float getDur();
     string getGen();
-    string getCalif();
+    float getCalif();
     string getFechaEs();
     virtual void getDatos(); 
 }; 

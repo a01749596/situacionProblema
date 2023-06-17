@@ -5,7 +5,11 @@ using namespace std;
 Autor: Paola Varela Hernández
 Implementación de métodos de la clase Video
 */
-Video::Video(string Id, string nom, string dur, string gen, string calif, string fechaEs)
+Video::Video()
+{
+}
+
+Video::Video(string, string, float, string, float, string)
 {
     this->Id = Id;
     this->nom = nom;
@@ -15,9 +19,9 @@ Video::Video(string Id, string nom, string dur, string gen, string calif, string
     this->fechaEs = fechaEs;
 }
 
-void Video::setCalif(float num)
+void Video::setCalif(float numero)
 {
-    calif = num; 
+    calif = numero; 
 }
 
 string Video::getId()
@@ -30,7 +34,7 @@ string Video::getNom()
     return nom;
 }
 
-string Video::getDur()
+float Video::getDur()
 {
     return dur;
 }
@@ -40,7 +44,7 @@ string Video::getGen()
     return gen;
 }
 
-string Video::getCalif()
+float Video::getCalif()
 {
     return calif;
 }

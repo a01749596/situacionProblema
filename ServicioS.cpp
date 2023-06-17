@@ -9,19 +9,18 @@ void ServicioS::leerPeliculas()
     ifstream DatosPelicula;
     DatosPelicula.open("./DatosPeliculas.csv");
     string linea; 
+    string Id;
+    string nombre; 
+    string duracion; 
+    string genero; 
+    string calificacion; 
+    string fechaestreno;
     vector<string> datos;  
     
-    if (datos.size()==6)
-    {
     while (getline(DatosPelicula, linea))
     {
         stringstream token(linea);
-        string Id;
-        string nombre; 
-        string duracion; 
-        string genero; 
-        string calificacion; 
-        string fechaestreno;
+        
         getline(token, Id, ',');
         getline(token, nombre, ','); 
         getline(token, duracion, ',');
@@ -33,7 +32,6 @@ void ServicioS::leerPeliculas()
         Peliculas peliculas(Id, nombre, duracion, genero, calificacion, fechaestreno);
 
         peli.push_back(peliculas); 
-    }
     }
     DatosPelicula.close(); 
 }
