@@ -5,29 +5,31 @@ using namespace std;
 Autor: Paola Varela Hernández
 Implementación de métodos de la clase Video
 */
-Video::Video()
+
+//constructor de la clase, inicializamos los atributos
+Video::Video(string IdP, string nomP, int durP, string genP, float califP, string fechaEsP)
 {
+    this->Id = IdP;
+    this->nom = nomP;
+    this->dur = durP;
+    this->gen = genP;
+    this->calif = califP;
+    this->fechaEs = fechaEsP;
 }
 
-Video::Video(string, string, float, string, float, string)
-{
-    this->Id = Id;
-    this->nom = nom;
-    this->dur = dur;
-    this->gen = gen;
-    this->calif = calif;
-    this->fechaEs = fechaEs;
-}
-
+//Verifica que la calificacion este en un rango del 0 al 7 para despues asignarla a cada video 
 void Video::setCalif(float calificacion)
 {
     int califM = 7; 
     if (calificacion >=0 && calificacion <= califM)
     {
         calif = calificacion;
+    }else{
+        cout << "La calificación es inválida"; 
     }
 }
 
+//utilizamos los gets para obtener los valores de los atributos 
 string Video::getId()
 {
     return Id;
@@ -38,7 +40,7 @@ string Video::getNom()
     return nom;
 }
 
-float Video::getDur()
+int Video::getDur()
 {
     return dur;
 }
@@ -58,7 +60,13 @@ string Video::getFechaEs()
     return fechaEs;
 }
 
+//muestra los videos que obtuvimos 
 void Video::getDatos()
 {
-    cout << "Id: " << Id << "nombre: " << nom << "Duracion: " << dur << "genero: " << gen << "calificacion: " << calif << "fecha de estreno: " << fechaEs << endl; 
+    cout << Id; 
+    cout << nom;
+    cout << dur;
+    cout << gen;
+    cout << calif; 
+    cout << fechaEs; 
 }

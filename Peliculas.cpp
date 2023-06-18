@@ -1,25 +1,24 @@
 #include "Peliculas.h"
 #include <iostream> 
-#include <string> 
+#include <string>
 
-Peliculas::Peliculas(string Id, string nom, float dur, string gen, float calif, string fechaEs): Video(Id, nom, dur, gen, calif, fechaEs)
+//Constructor de la clase, inicializa con los atributos de la clase video
+Peliculas::Peliculas(string IdP, string nomP, float durP, string genP, float califP, string fechaEsP) : Video(IdP, nomP, durP, genP, califP, fechaEsP)
 {
 }
 
-Peliculas::Peliculas(vector<string> datos) : Video(datos[0], datos[1], stof(datos[2]), datos[3], stof(datos[4]), datos[5])
-{
-}
-
+//obtenemos los datos de las peliculas
 void Peliculas::getDatos()
 {
-    cout << getId();
-    cout << getNom();
-    cout << getDur();
-    cout << getGen();
-    cout << getCalif();
-    cout << getFechaEs(); 
+    cout << "Id: "<< getId() << endl; 
+    cout << "Nombre: " << getNom() << endl; 
+    cout << "Duracion: " << getDur() << endl; 
+    cout << "Genero: " << getGen() << endl; 
+    cout << "Calificacion: " << getCalif() << endl; 
+    cout << "Fecha de estreno: " << getFechaEs() << endl; 
 }
 
+//volvemos a redefinir la calificacion 
 void Peliculas::setCalif(float calificacion)
 {
     Video::setCalif(calificacion); 

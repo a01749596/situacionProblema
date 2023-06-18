@@ -12,24 +12,28 @@ using namespace std;
 class Video
 {
 private: 
+    //Atributos de la clase 
+    //Identificación de todos los datos 
     string Id; 
     string nom; 
-    float dur;
+    int dur;
     string gen;
     float calif; 
     string fechaEs;
-protected: 
-    Video(); 
 public: 
-    Video(string, string, float, string, float, string); 
+    //Constructor de la clase
+    Video(string IdP, string nomP, int durP, string genP, float califP, string fechaEsP);
+    //Método virtual puro para establecer la calificación del video 
     virtual void setCalif(float calificacion) = 0;
+    //Métodos para obtener los atributos del video
     string getId();
     string getNom(); 
-    float getDur();
+    int getDur();
     string getGen();
     float getCalif();
     string getFechaEs();
-    virtual void getDatos() = 0; 
+    //Método virtual para obtener los datos del video 
+    virtual void getDatos(); 
 }; 
 
 #endif 
